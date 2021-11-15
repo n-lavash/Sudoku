@@ -4,12 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import java.nio.charset.Charset;
 import java.util.Random;
 
 public class SudokuBoardView extends View {
@@ -68,21 +66,81 @@ public class SudokuBoardView extends View {
 
         fillCells(canvas);
         drawLine(canvas);
-        //canvas.drawText(Integer.toString(numberArray[0][0]), 100, 100, numberPaint);
         drawNumbers(canvas);
     }
 
     private void drawNumbers(Canvas canvas) {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                numberArray[i][j] = j+1;
-            }
-        }
 
-        Paint temp;
+        createField();
+
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                     canvas.drawText(Integer.toString(numberArray[i][j]), j*115+50, i*120+100, numberPaint);
+            }
+        }
+    }
+
+    private void createField() {
+        // заполняем массив числами от 1 до 9
+        initializeArray(numberArray);
+
+        // сдигаем числа в таблице
+        Random randomCount = new Random();
+        Random randomRow = new Random();
+
+        for (int i = 0; i < 9; i++) {
+            int r1 = randomCount.nextInt(9);
+            int r2 = randomRow.nextInt(9);
+            shiftNumbers(r1, r2);
+        }
+
+        // транспонируем матрицу
+        transposingArray(numberArray);
+
+        // перемешиваем числа
+        shakeRowInsideArea();
+
+        // снова транспонируем матрицу
+        transposingArray(numberArray);
+
+    }
+
+    private void shakeRowInsideArea() {
+        int i = 0;
+        do{
+            int[] tempArray = numberArray[i];
+            int[] tempArray2 = numberArray[i+1];
+
+            numberArray[i] = numberArray[i+2];
+            numberArray[i+1] = tempArray;
+            numberArray[i+2] = tempArray2;
+            i=i+3;
+        }while(i < size);
+    }
+
+    private void transposingArray(int[][] array) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < i; j++) {
+                int tmp = array[i][j];
+                array[i][j] = array[j][i];
+                array[j][i] = tmp;
+            }
+        }
+    }
+
+    private void shiftNumbers(int count, int row) {
+        int index;
+        for(int j = 0; j < size; j++){
+            index = (j+count)%9+1;
+            numberArray[row][j] = index;
+        }
+    }
+
+    private void initializeArray(int[][] array) {
+        for(int i = 0; i < size; i++){
+            for(int j = 0; j< size; j++){
+                numberArray[i][j] = j+1;
             }
         }
     }
