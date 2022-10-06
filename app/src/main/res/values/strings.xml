@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="btn_one">1</string>
+    <string name="btn_two">2</string>
+    <string name="btn_three">3</string>
+    <string name="btn_four">4</string>
+    <string name="btn_five">5</string>
+    <string name="btn_six">6</string>
+    <string name="btn_seven">7</string>
+    <string name="btn_eight">8</string>
+    <string name="btn_nine">9</string>
+    <string name="text_view_level">Уровень: %s</string>
+    <string name="text_view_mistakes_easy">Ошибок: %d</string>
+    <string name="text_view_mistakes_another">Ошибок: %d / %d</string>
+    <string name="logo_description">Логотип приложения</string>
+    <string name="btn_new_game">Начать игру</string>
+    <string name="btn_settings">Настройки</string>
+    <string name="btn_about_game">Об игре</string>
+    <string name="btn_exit">Выход</string>
+    <string name="btn_easy">Легкий</string>
+    <string name="btn_medium">Средний</string>
+    <string name="btn_hard">Сложный</string>
+    <string name="img_cancel_description">Изображение отмены действия</string>
+    <string name="img_clear_description">Изображение очистки ячейки</string>
+    <string name="img_hint_description">Изображение подсказки</string>
+    <string name="img_solve_description">Изображение автоматического решения судоку</string>
+    <string name="btn_cancel">Отменить</string>
+    <string name="btn_clear">Очистить</string>
+    <string name="btn_hint">Подсказки x%d</string>
+    <string name="btn_solve">Решить</string>
+    <string name="btn_finish">Завершить игру</string>
+    <string name="img_win_logo">Логотип победы</string>
+    <string name="text_view_win">Ура! Победа!</string>
+    <string name="text_view_lose">О нет! Вы проиграли!</string>
+    <string name="text_view_info_level">Пройденный уровень: %s</string>
+    <string name="text_view_current_time">Текущее время: %s</string>
+    <string name="text_view_best_time">Лучшее время: %s</string>
+    <string name="text_view_current_mistakes">Количество ошибок: %d</string>
+    <string name="text_view_best_mistakes">Наименьшее количество ошибок: %d</string>
+    <string name="btn_again_game">Начать новую игру</string>
+    <string name="end_game_mistakes">Игра окончена.\nПревышено максимальное количество ошибок: %d</string>
+    <string name="btn_yes">Да</string>
+    <string name="btn_no">Нет</string>
+    <string name="text_view_restart_game">Начать игру сначала?</string>
+    <string name="btn_reset">Вернуться назад</string>
+    <string name="text_view_reset_game">Вы уверены, что хотите сбросить весь прогресс?</string>
+    <string name="text_view_timer">00:00</string>
+    <string name="toast_hint">Здесь %d</string>
+    <string name="fail_intent">Возникла ошибка. Попробуйте запустить игру позже</string>
+    <string name="fail_generate_sudoku">Возникла ошибка генерации судоку. Попробуйте снова</string>
+    <string name="mistake_play">Ошибка!</string>
+    <string name="toast_incorrect_finish">Игра еще не окончена!</string>
+    <string name="fail_hint">Подсказок не осталось</string>
+    <string name="text_view_about">Это приложение сделано в рамках курсовой работы
+        \nстуденткой 3-го курса,
+        \n341 группы,
+        \nфакультета КНиИТ,
+        \nуниверситета СГУ им. Чернышевского.</string>
+    <string name="text_view_developer">Связь с разработчиком:</string>
+    <string name="telegram_description">Изображение телеграма</string>
+    <string name="vkontakte_description">Изображение вконтакте</string>
+    <string name="instagram_description">Изображение инстаграма</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintBottom_toBottomOf="@+id/guideline"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo_description"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        custom:layout_constraintGuide_percent="0.35" />
+
+    <Button
+        android:id="@+id/buttonNewGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:onClick="onClickSelectLevel"
+        android:text="@string/btn_new_game"
+        android:textColor="@color/button_text"
+        custom:layout_constraintBottom_toTopOf="@+id/buttonAboutGame"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/buttonAboutGame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:textColor="@color/button_text"
+        android:text="@string/btn_about_game"
+        android:onClick="onClickAboutGame"
+        custom:layout_constraintBottom_toTopOf="@+id/buttonExit"
+        custom:layout_constraintEnd_toEndOf="@+id/buttonNewGame"
+        custom:layout_constraintStart_toStartOf="@+id/buttonNewGame"
+        custom:layout_constraintTop_toBottomOf="@+id/buttonNewGame" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:textColor="@color/button_text"
+        android:text="@string/btn_exit"
+        android:onClick="onClickExit"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="@+id/buttonAboutGame"
+        custom:layout_constraintStart_toStartOf="@+id/buttonAboutGame"
+        custom:layout_constraintTop_toBottomOf="@+id/buttonAboutGame" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
